@@ -61,7 +61,16 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="hero-btn">Замовити послугу</button>
+          <button data-modal-open type="button" class="hero-btn">Замовити послугу</button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="hero-modal-close-btn" data-modal-close>
+              <svg aria-label="іконка закрити" class="modal-close-icon" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
       <!-- Переваги -->
@@ -138,25 +147,40 @@
           <h2 class="section-title">Чим ми займаємося</h2>
           <ul class="work-list list">
             <li class="item">
-              <img
-                src="./images/box-1.jpg"
-                alt="Дизайнер верстає сторінку на ноутбуці"
-                width="370"
-              />
+              <div class="first-thumb">
+                <img
+                  src="./images/box-1.jpg"
+                  alt="Дизайнер верстає сторінку на ноутбуці"
+                  width="370"
+                />
+                <div class="works-backdrop">
+                  <p class="works-text">Десктопні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="item">
-              <img
-                src="./images/box-2.jpg"
-                alt="За рабочим столом сидить дизайнер з телефоном в руці."
-                width="370"
-              />
+              <div class="second-thumb">
+                <img
+                  src="./images/box-2.jpg"
+                  alt="За рабочим столом сидить дизайнер з телефоном в руці."
+                  width="370"
+                />
+                <div class="works-backdrop">
+                  <p class="works-text">Мобільні додатки</p>
+                </div>
+              </div>
             </li>
             <li class="item">
-              <img
-                src="./images/box-3.jpg"
-                alt="Дизайнер за рабочим столом выбирає колір на планшеті для майбутнього проекту"
-                width="370"
-              />
+              <div class="third-thumb">
+                <img
+                  src="./images/box-3.jpg"
+                  alt="Дизайнер за рабочим столом выбирає колір на планшеті для майбутнього проекту"
+                  width="370"
+                />
+                <div class="works-backdrop">
+                  <p class="works-text">Дизайнерські рішення</p>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -475,5 +499,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
