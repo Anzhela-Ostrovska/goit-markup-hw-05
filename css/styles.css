@@ -27,6 +27,7 @@ h6,
 p {
   margin: 0;
 }
+
 ul,
 ol {
   margin-top: 0;
@@ -243,14 +244,21 @@ body {
   background-color: var(--backdrop-color);
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   width: 528px;
   height: 581px;
@@ -258,13 +266,10 @@ body {
   color: black;
 }
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
-}
-.backdrop.is-hidden {
   opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
+  transform: translate(-50%, -50%) scale(1.1);
 }
+
 .hero-modal-close-btn {
   display: flex;
   align-items: center;
@@ -341,25 +346,21 @@ body {
 .third-thumb {
   position: relative;
 }
-.works-backdrop {
-  position: absolute;
-  content: '';
+
+.works-text {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 370px;
   height: 70px;
   background-color: var(--backdrop-color);
-  text-align: center;
-}
-.works-text {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  line-height: 16px;
   text-transform: uppercase;
   color: var(--secondary-text-color-white);
-  margin-top: 27px;
 }
 /* =======WORKERS SECTION======*/
 
@@ -449,6 +450,8 @@ body {
   height: 92px;
   border: 1px solid var(--social-links-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list {
   display: flex;
@@ -456,8 +459,6 @@ body {
 }
 .clients-list-icon {
   fill: currentColor;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list-link:hover,
 .clients-list-link:focus {
